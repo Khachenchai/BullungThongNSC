@@ -10,6 +10,7 @@ class MySetting {
   //Route
   static String routeHomePage = '/homepage';
   static String routeAuthen = '/authen';
+  static String routeTermOfService = '/termofservice';
 
   //Color
   static Color primary = Color(0xffc7ed8e);

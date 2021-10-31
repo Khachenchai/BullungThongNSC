@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "218750916688",
+    "project_id": "bullungthong-897bb",
+    "storage_bucket": "bullungthong-897bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218750916688:android:02aaddf72893d319281955",
+        "android_client_info": {
+          "package_name": "com.example.bullungthong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218750916688-c74vg3be9rhfam3ii0g8akea16iqk7hf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ryh2Z0iU6S--a3aUOJC1XFrNqd75fZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218750916688-c74vg3be9rhfam3ii0g8akea16iqk7hf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

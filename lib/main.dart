@@ -1,6 +1,7 @@
 import 'package:bullungthong/config/my_setting.dart';
 import 'package:bullungthong/states/authen.dart';
 import 'package:bullungthong/states/homepage.dart';
+import 'package:bullungthong/states/term_of_service.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,12 +15,14 @@ void main() {
 final Map<String, WidgetBuilder> map = {
   '/homepage': (BuildContext context) => HomePage(),
   '/authen': (BuildContext context) => Authen(),
+  '/termofservice': (BuildContext context) => TermOfService(),
 };
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
