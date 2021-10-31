@@ -7,6 +7,10 @@ class MySetting {
   static String appName = 'BullungThong';
   static String credit = 'APG Group';
 
+  //Route
+  static String routeHomePage = '/homepage';
+  static String routeAuthen = '/authen';
+
   //Color
   static Color primary = Color(0xffc7ed8e);
   static Color dark = Color(0xff95ba5f);
@@ -14,6 +18,9 @@ class MySetting {
   
   //Image
   static String logoImg = 'assets/images/logo.png';
+  static String callImg = 'assets/images/call.png';
+  static String facebookImg = 'assets/images/facebook.png';
+  static String googleImg = 'assets/images/google.png';
 
   //TextStyle
   TextStyle customStyle(double size, Color color, TextDecoration decoration) => TextStyle(
