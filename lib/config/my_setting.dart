@@ -6,6 +6,7 @@ class MySetting {
   //General
   static String appName = 'BullungThong';
   static String credit = 'APG Group';
+  static String licenseName = 'Khachenchai Jaikla';
 
   //Route
   static String routeHomePage = '/homepage';
@@ -35,5 +36,6 @@ class MySetting {
     color: color,
     decoration: decoration
   );
+
 
 }
