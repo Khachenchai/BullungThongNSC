@@ -17,6 +17,8 @@ class MySetting {
   static Color primary = Color(0xffc7ed8e);
   static Color dark = Color(0xff95ba5f);
   static Color light = Color(0xfffbffbf);
+  static Color textColor1 = Color(0xff000);
+  static Color textColor2 = Colors.greenAccent.shade100;
   
   //Image
   static String logoImg = 'assets/images/logo.png';
