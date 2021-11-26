@@ -22,6 +22,7 @@ class MySetting {
   
   //Image
   static String logoImg = 'assets/images/logo.png';
+  static String logo3Img = 'assets/images/logo3.jpg';
   static String callImg = 'assets/images/call.png';
   static String facebookImg = 'assets/images/facebook.png';
   static String googleImg = 'assets/images/google.png';
