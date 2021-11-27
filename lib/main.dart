@@ -1,13 +1,19 @@
+import 'package:bullungthong/backends/google_sign_in_provider.dart';
 import 'package:bullungthong/config/my_setting.dart';
 import 'package:bullungthong/states/authen.dart';
 import 'package:bullungthong/states/homepage.dart';
 import 'package:bullungthong/states/term_of_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
 
 String? initialRoute;
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   initialRoute = MySetting.routeHomePage;
   runApp(MyApp());
 }
@@ -21,13 +27,16 @@ final Map<String, WidgetBuilder> map = {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ChangeNotifierProvider(
+      create: (context) => GoogleSignInProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MyHomePage(title: 'Flutter Demo Home Page'),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

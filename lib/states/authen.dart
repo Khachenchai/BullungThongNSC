@@ -8,14 +8,16 @@ class Authen extends StatefulWidget {
 }
 
 class _AuthenState extends State<Authen> {
+  // final emailControler
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          height: 50,
-          width: 50,
-          color: Colors.blue,
+        child: Column(
+          children: [
+            TextField()
+          ],
         ),
       ),
     );

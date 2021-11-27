@@ -1,7 +1,10 @@
+import 'package:bullungthong/backends/google_sign_in_provider.dart';
 import 'package:bullungthong/config/my_setting.dart';
 import 'package:bullungthong/config/show_image.dart';
 import 'package:bullungthong/config/show_title.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -24,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(top: 70),
-              child: ShowImage(path: MySetting.logoImg, height: 200, width: 200),
+              child: ShowImage(path: MySetting.logo3Img, height: 200, width: 200),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 50),
@@ -43,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      buildGoogle(),
+                      buildGoogle(context),
                       buildFacebook(),
                       buildIndent(),
                       buildPhoneNumber(),
@@ -109,40 +112,21 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-InkWell buildGoogle() {
-  return InkWell(
-    child: Padding(
-      padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
-      child: Container(
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey, blurRadius: 10, offset: Offset(0, 10))
-            ],
-            borderRadius: BorderRadius.all(
-              Radius.circular(22),
-            ),
-            color: Color(0xfff2f2f2)),
-        padding: EdgeInsets.all(8.0),
-        height: 60,
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            ShowImage(
-              path: MySetting.googleImg,
-              height: 40,
-              width: 40,
-            ),
-            SizedBox(width: 15),
-            Text(
-              "Sign in with Google",
-              style: MySetting().customStyle(20, Colors.black, TextDecoration.none),
-            )
-          ],
-        ),
-      ),
+ElevatedButton buildGoogle(context) {
+  return ElevatedButton.icon(
+    style: ElevatedButton.styleFrom(
+      primary: Color(0xfff2f2f2),
+      onPrimary: Colors.black,
+      maximumSize: Size(double.infinity, 50),
+      elevation: 5,
     ),
-    onTap: () => {print("object")});
+    icon: FaIcon(FontAwesomeIcons.google, color: Colors.red,),
+    label: Text("Sign in with Google"),
+    onPressed: () {
+      final provider =
+        Provider.of<GoogleSignInProvider>(context, listen: false);
+    },
+  );
 }
 
 InkWell buildFacebook() {
@@ -239,3 +223,37 @@ InkWell buildPhoneNumber() {
     ),
     onTap: () => {print("object")});
 }
+
+
+// child: Padding(
+//       padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
+//       child: Container(
+//         decoration: BoxDecoration(
+//             boxShadow: [
+//               BoxShadow(
+//                   color: Colors.grey, blurRadius: 10, offset: Offset(0, 10))
+//             ],
+//             borderRadius: BorderRadius.all(
+//               Radius.circular(22),
+//             ),
+//             color: Color(0xfff2f2f2)),
+//         padding: EdgeInsets.all(8.0),
+//         height: 60,
+//         child: Row(
+//           // mainAxisAlignment: MainAxisAlignment.start,
+//           children: [
+//             ShowImage(
+//               path: MySetting.googleImg,
+//               height: 40,
+//               width: 40,
+//             ),
+//             SizedBox(width: 15),
+//             Text(
+//               "Sign in with Google",
+//               style: MySetting().customStyle(20, Colors.black, TextDecoration.none),
+//             )
+//           ],
+//         ),
+//       ),
+//     ),
+//     onTap: () => {});
